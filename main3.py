@@ -41,7 +41,7 @@ if __name__=="__main__":
     'Produits','Adresse','Gouvernorat','Délégation','Téléphone','Fax'
     ,'E-mail','URL','Régime','Pays du Participant Etranger','Entrée en production','Capital en DT','Emploi'])
     #4873 data entry has been found while scanning this website
-    page= 1
+    page= 3873
     driver = webdriver.Chrome()
     #the ident param points to the number of publicly registred companys 
     driver.get("http://www.tunisieindustrie.nat.tn/fr/dbi.asp?action=result&ident=1")
@@ -58,14 +58,14 @@ if __name__=="__main__":
         except:
             print("error while getting page")
             print("saving data before continuing...")
-            data.to_excel("backup.xlsx")
+            data.to_excel("backup3.xlsx")
             print("page number: "+str(page))
             print("skip to next page")
             continue       
         pass
     pass
     #save data to excel
-    data.to_excel("final_data.xlsx")
+    data.to_excel("final_data3.xlsx")
     driver.quit()
     print("..........script ended.........")
 
