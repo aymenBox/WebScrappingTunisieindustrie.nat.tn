@@ -6,17 +6,20 @@ import animation
 import pandas as pd
 
 @animation.wait('bar', color='blue')
-def fucntion():
-    time.sleep(5)
+def loading(sec):
+    time.sleep(sec)
     pass
 
 if __name__=="__main__":
-    wait = animation.Wait('bar', color='blue')
     print("..........script started.........")
     #create a dataframe with name specialite tel tel1 adresse 
     data = pd.DataFrame(columns=['Denomination','Activités','Tél. siège/usine','Gouvernorat','google_map'])
     driver = webdriver.Chrome()
+    #the ident param points to the number of publicly registred companys 
     driver.get("http://www.tunisieindustrie.nat.tn/fr/dbi.asp?action=result&ident=1")
-    time.sleep(5)
+    loading(2)
+    elem = driver.find_element(By.CLASS_NAME,"table-wrap")
+    print(elem.text)
+    
     pass
 
